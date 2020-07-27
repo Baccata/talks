@@ -2,12 +2,12 @@
 title: Weaver and cats
 revealOptions:
     transition: 'fade'
-template: template.html
-css: dss.css
+template: ./template.html
+css: ./dss.css
 
 ---
 
-<img src="./img/with_ambre.jpg" width="400px" align="right">
+<img src="./assets/with_ambre.jpg" width="400px" align="right">
 
 **Who am I ?**
 
@@ -22,7 +22,7 @@ css: dss.css
 
 **Where am I ?**
 
-![](./img/home.png)
+![](./assets/home.png)
 
 
 ---
@@ -104,7 +104,7 @@ Scala is (very) unopinionated ...
 
 ---
 
-![](./img/notes.gif)
+![](./assets/notes.gif)
 
 ---
 
@@ -272,15 +272,15 @@ Listening to music is now decoupled from making it
 
 ---
 
-<img src="./img/grandmaster_flash.jpg" width="400px" style="align=left;"/>
+<img src="./assets/grandmaster_flash.jpg" width="400px" style="align=left;"/>
 
 ---
 
 Referentially transparent side-effects (in Scala)
 
-<img src="./img/zio.png" width="120px"/>
-<img src="./img/monix.png" width="120px"/>
-<img src="./img/cats.png" width="120px"/>
+<img src="./assets/zio.png" width="120px"/>
+<img src="./assets/monix.png" width="120px"/>
+<img src="./assets/cats.png" width="120px"/>
 
 zio / monix / cats-effect
 
@@ -288,7 +288,7 @@ zio / monix / cats-effect
 
 **cats-effect**
 
-<img src="./img/cats-effect.png" width="60%"/>
+<img src="./assets/cats-effect.png" width="60%"/>
 
 
 
@@ -460,7 +460,7 @@ val song = (repeated, revRepeated).parTupled.void
 
 <div id = "demo2"></div>
 
-![](./img/vinyl.jpg)
+![](./assets/vinyl.jpg)
 
 ---
 
@@ -643,7 +643,7 @@ object MySuite extends SimpleIOSuite {
 
 ---
 
-![](./img/weaver/screen1.png)
+![](./assets/weaver/screen1.png)
 
 
 ---
@@ -660,7 +660,7 @@ test("contains 5") {
 
 ---
 
-![](./img/weaver/screen4.png)
+![](./assets/weaver/screen4.png)
 
 ---
 
@@ -680,7 +680,7 @@ object suite2 extends SimpleIOSuite {
 
 ---
 
-<img src="./img/weaver/screen5.png" width="75%" height="75%">
+<img src="./assets/weaver/screen5.png" width="75%" height="75%">
 
 
 ---
@@ -704,7 +704,7 @@ for (i <- 1 to 100) test(s"hello $i") {
 
 ---
 
-![](./img/weaver/screen2.png)
+![](./assets/weaver/screen2.png)
 
 ---
 
@@ -726,7 +726,7 @@ for (c <- chars) test(s"contains $c") { shared =>
 
 ---
 
-![](./img/weaver/screen3.png)
+![](./assets/weaver/screen3.png)
 
 ---
 

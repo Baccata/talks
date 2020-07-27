@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="./dist/reveal.css" />
     <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
     <link rel="stylesheet" href="./css/highlight/zenburn.css" />
-    <link rel="stylesheet" href="./_assets/dss.css" />
+    <link rel="stylesheet" href="./_assets/./dss.css" />
 
   </head>
   <body>
     <div class="reveal">
       <div class="slides"><section  data-markdown><script type="text/template">
 
-<img src="./img/with_ambre.jpg" width="400px" align="right">
+<img src="./assets/with_ambre.jpg" width="400px" align="right">
 
 **Who am I ?**
 
@@ -28,7 +28,7 @@
 
 **Where am I ?**
 
-![](./img/home.png)
+![](./assets/home.png)
 
 </script></section><section  data-markdown><script type="text/template">
 ## An intro to cats-effect
@@ -104,7 +104,7 @@ Scala is (very) unopinionated ...
 </script></section><section  data-markdown><script type="text/template">
 **Playing music from code**
 </script></section><section  data-markdown><script type="text/template">
-![](./img/notes.gif)
+![](./assets/notes.gif)
 </script></section><section  data-markdown><script type="text/template">
 ```scala
 import javax.sound.midi._
@@ -209,7 +209,7 @@ hinders expressiveness
 import java.util.UUID
 
 val uuidVal  = UUID.randomUUID()
-// uuidVal: UUID = 302d700a-5da6-4187-b875-e1606dca3bb0
+// uuidVal: UUID = 8fd5e13a-260b-428c-bf66-6e15b9587481
 
 uuidVal == uuidVal
 // res4: Boolean = true
@@ -245,19 +245,19 @@ the world
 
 Listening to music is now decoupled from making it
 </script></section><section  data-markdown><script type="text/template">
-<img src="./img/grandmaster_flash.jpg" width="400px" style="align=left;"/>
+<img src="./assets/grandmaster_flash.jpg" width="400px" style="align=left;"/>
 </script></section><section  data-markdown><script type="text/template">
 Referentially transparent side-effects (in Scala)
 
-<img src="./img/zio.png" width="120px"/>
-<img src="./img/monix.png" width="120px"/>
-<img src="./img/cats.png" width="120px"/>
+<img src="./assets/zio.png" width="120px"/>
+<img src="./assets/monix.png" width="120px"/>
+<img src="./assets/cats.png" width="120px"/>
 
 zio / monix / cats-effect
 </script></section><section  data-markdown><script type="text/template">
 **cats-effect**
 
-<img src="./img/cats-effect.png" width="60%"/>
+<img src="./assets/cats-effect.png" width="60%"/>
 
 
 </script></section><section  data-markdown><script type="text/template">
@@ -273,7 +273,7 @@ def printStr(o: Any) : IO[Unit] = IO(println(o.toString))
 
 // IO records the side effect ...
 val sideEffect = printStr("hello")
-// sideEffect: IO[Unit] = IO$1361028119
+// sideEffect: IO[Unit] = IO$161056709
 
 // ... for a later use
 sideEffect.unsafeRunSync()
@@ -286,7 +286,7 @@ Composing side effects sequentially
 import cats.implicits._
 
 val twice = sideEffect *> sideEffect
-// twice: IO[Unit] = IO$781886433
+// twice: IO[Unit] = IO$277206178
 
 twice.unsafeRunSync()
 // hello
@@ -314,7 +314,7 @@ Composing collections of side effects
 
 ```scala
 val fiveTimes = (1 to 5).toList.traverse(printStr)
-// fiveTimes: IO[List[Unit]] = IO$654269042
+// fiveTimes: IO[List[Unit]] = IO$2038757336
 
 fiveTimes.void.unsafeRunSync()
 // 1
@@ -341,7 +341,7 @@ val helloWorlds = for {
   _      <- fork.cancel.delayBy(500.millis)
   _      <- printStr("!!")
 } yield ()
-// helloWorlds: IO[Unit] = IO$718795644
+// helloWorlds: IO[Unit] = IO$1460278283
 
 
 helloWorlds.void.unsafeRunSync()
@@ -417,7 +417,7 @@ val song = (repeated, revRepeated).parTupled.void
 </script></section><section  data-markdown><script type="text/template">
 <div id = "demo2"></div>
 
-![](./img/vinyl.jpg)
+![](./assets/vinyl.jpg)
 </script></section><section  data-markdown><script type="text/template">
 **Cats-effect: resource management**
 </script></section><section  data-markdown><script type="text/template">
@@ -573,7 +573,7 @@ object MySuite extends SimpleIOSuite {
 
 ```
 </script></section><section  data-markdown><script type="text/template">
-![](./img/weaver/screen1.png)
+![](./assets/weaver/screen1.png)
 
 </script></section><section  data-markdown><script type="text/template">
 
@@ -586,7 +586,7 @@ test("contains 5") {
 }
 ```
 </script></section><section  data-markdown><script type="text/template">
-![](./img/weaver/screen4.png)
+![](./assets/weaver/screen4.png)
 </script></section><section  data-markdown><script type="text/template">
 Aggregated failure reports
 
@@ -602,7 +602,7 @@ object suite2 extends SimpleIOSuite {
 }
 ```
 </script></section><section  data-markdown><script type="text/template">
-<img src="./img/weaver/screen5.png" width="75%" height="75%">
+<img src="./assets/weaver/screen5.png" width="75%" height="75%">
 
 </script></section><section  data-markdown><script type="text/template">
 Composable assertions
@@ -620,7 +620,7 @@ for (i <- 1 to 100) test(s"hello $i") {
 }
 ```
 </script></section><section  data-markdown><script type="text/template">
-![](./img/weaver/screen2.png)
+![](./assets/weaver/screen2.png)
 </script></section><section  data-markdown><script type="text/template">
 Principled resource management
 
@@ -638,7 +638,7 @@ for (c <- chars) test(s"contains $c") { shared =>
 }
 ```
 </script></section><section  data-markdown><script type="text/template">
-![](./img/weaver/screen3.png)
+![](./assets/weaver/screen3.png)
 </script></section><section  data-markdown><script type="text/template">
 Conclusion
 </script></section><section  data-markdown><script type="text/template">
@@ -725,7 +725,7 @@ Questions ?
     <script>
       Reveal.initialize(options);
     </script>
-    <script type="text/javascript" src="./out-bundle.js">
+    <script type="text/javascript" src="./assets/out-bundle.js">
     </script>
   </body>
 </html>

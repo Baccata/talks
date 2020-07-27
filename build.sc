@@ -54,7 +54,7 @@ object talks extends mdoc.MdocModule {
       val jsBundle = playjs.devWebpack()
       jsBundle.foreach { pathRef =>
         val path = pathRef.path
-        os.copy.over(path, dest / path.last)
+        os.copy.over(path, dest / "assets" / path.last)
       }
       os.makeDir.all(os.pwd / "docs")
       os.proc(
@@ -62,7 +62,7 @@ object talks extends mdoc.MdocModule {
         dest,
         "--static",
         os.pwd / "docs",
-        s"--static-dirs=img"
+        s"--static-dirs=assets"
       ).call(cwd = dest)
     }
 
