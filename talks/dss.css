@@ -1,0 +1,14 @@
+/*********************************************
+* FOOTER
+*********************************************/
+footer {
+  position: fixed;
+  bottom: 1em;
+  left: 3em;
+  margin: 1em; }
+
+.ftr {
+  background: url("img/dss.svg") no-repeat;
+  background-size: contain;
+  width: 30em;
+  height: 6em; }
